@@ -30,6 +30,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
+        <p class="mt-3">Don't have an account? <a href="register.php">Register here</a>.</p> <!-- Registration link -->
     </div>
 
     <?php include('../includes/footer.php'); ?>
