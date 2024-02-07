@@ -47,7 +47,7 @@ include('../includes/header.php');
                     echo "<td>" . $row["last_name"] . "</td>";
                     echo "<td>" . $row["username"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
-                    echo "<td><a href='update_user_form.php?user_id=" . $row["user_id"] . "'>Update</a> | <a href='scripts/delete_user.php?user_id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
+                    echo "<td><a href='../scripts/update_user_form.php?user_id=" . $row["user_id"] . "'>Update</a> | <a href='../scripts/delete_user.php?user_id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
                     echo "</tr>";
                 }
             } else {
