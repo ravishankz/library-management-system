@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 include('../config.php');
 
 if (!isset($_SESSION['username'])) {
@@ -19,15 +17,15 @@ include('../includes/header.php');
     <h2>User Records</h2>
     <?php
     if (isset($_SESSION['success'])) {
-        echo '<p class="success">' . $_SESSION['success'] . '</p>';
+        echo '<div class="alert alert-success" role="alert">' . $_SESSION['success'] . '</div>';
         unset($_SESSION['success']);
     } elseif (isset($_SESSION['error'])) {
-        echo '<p class="error">' . $_SESSION['error'] . '</p>';
+        echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error'] . '</div>';
         unset($_SESSION['error']);
     }
     ?>
-    <table>
-        <thead>
+    <table class="table">
+        <thead class="thead-dark">
             <tr>
                 <th>User ID</th>
                 <th>First Name</th>
@@ -47,7 +45,7 @@ include('../includes/header.php');
                     echo "<td>" . $row["last_name"] . "</td>";
                     echo "<td>" . $row["username"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
-                    echo "<td><a href='../scripts/update_user_form.php?user_id=" . $row["user_id"] . "'>Update</a> | <a href='../scripts/delete_user.php?user_id=" . $row["user_id"] . "' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
+                    echo "<td><a href='../scripts/update_user_form.php?user_id=" . $row["user_id"] . "' class='btn btn-primary'>Update</a> <a href='../scripts/delete_user.php?user_id=" . $row["user_id"] . "' class='btn btn-danger' onclick='return confirm(\"Are you sure you want to delete this user?\")'>Delete</a></td>";
                     echo "</tr>";
                 }
             } else {
