@@ -19,6 +19,7 @@ include('../includes/header.php');
     <h2>User Records</h2>
     <?php
     if (isset($_SESSION['success'])) {
+        echo '<p class="success">' . $_SESSION['success'] . '</p>';
         unset($_SESSION['success']);
     } elseif (isset($_SESSION['error'])) {
         echo '<p class="error">' . $_SESSION['error'] . '</p>';
