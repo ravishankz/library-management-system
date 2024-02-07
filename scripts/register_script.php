@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Redirect to register page if form is not submitted
-    header("Location: ../register.php");
+    header("Location: ../pages/register.php");
     exit();
 }
 ?>
