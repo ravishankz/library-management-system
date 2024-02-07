@@ -23,13 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Server-side validation
     if (!preg_match('/^U\d{3}$/', $userId)) {
         $_SESSION['error'] = "User ID must be in the format 'U001'.";
-        header("Location: ../register.php");
+        header("Location: ../pages/register.php");
         exit();
     }
 
     if (strlen($password) < 8) {
         $_SESSION['error'] = "Password must be at least 8 characters long.";
-        header("Location: ../register.php");
+        header("Location: ../pages/register.php");
         exit();
     }
 
@@ -41,13 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($resultUsername->num_rows > 0) {
         $_SESSION['error'] = "Username already exists.";
-        header("Location: ../register.php");
+        header("Location: ../pages/register.php");
         exit();
     }
 
     if ($resultEmail->num_rows > 0) {
         $_SESSION['error'] = "Email already exists.";
-        header("Location: ../register.php");
+        header("Location: ../pages/register.php");
         exit();
     }
 
