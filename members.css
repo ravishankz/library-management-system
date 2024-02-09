@@ -48,3 +48,25 @@ button {
     background-color: #0048ef;
     text-align: center;
   }
+
+  table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    margin-block-start: 20px;
+   
+}
+
+
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border: 2px solid;
+    text-align: center;
+}
+
+th {
+    background-color: #139dbc;
+    height: 50px;
+   
+    color: #fff;
+}
