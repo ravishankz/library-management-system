@@ -18,6 +18,36 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] === "POST" && (isset($_POST['submit']) || isset($_POST['update']))) {
+    // Sanitize and retrieve form data
+    $first_name = mysqli_real_escape_string($conn, $_POST["first_name"]);
+    $last_name = mysqli_real_escape_string($conn, $_POST["last_name"]);
+    $birthday = $_POST["birthday"];
+    $email = $_POST["email"];
+
+    $member_id = $_POST["member_id"];
+
+    // Check if the member ID already exists
+    $checkQuery = "SELECT * FROM member WHERE member_id = '$member_id'";
+    $checkResult = $conn->query($checkQuery);
+
+    if ($checkResult->num_rows > 0) {
+        // Member ID already exists, update the existing record
+        $updateQuery = "UPDATE member SET first_name='$first_name', last_name='$last_name', birthday='$birthday', email='$email' WHERE member_id = '$member_id'";
+        $conn->query($updateQuery) or die($conn->error);
+        $_SESSION['message'] = "Record has been updated!";
+    } else {
+        // Member ID doesn't exist, insert a new record
+        $insertQuery = "INSERT INTO member (member_id, first_name, last_name, birthday, email) VALUES ('$member_id', '$first_name', '$last_name', '$birthday', '$email')";
+        $conn->query($insertQuery) or die($conn->error);
+        $_SESSION['message'] = "Record has been saved!";
+    }
+
+    $_SESSION['msg_type'] = "warning";
+    header("Location: members.php");
+    exit();
+}
 
 ?>
 
