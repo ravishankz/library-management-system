@@ -49,6 +49,59 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (isset($_POST['submit']) || isset($
     exit();
 }
 
+if (isset($_GET['delete_member_id'])) {
+    $member_id = $_GET['delete_member_id'];
+
+    // avoid SQL injection
+    $stmt = $conn->prepare("DELETE FROM member WHERE member_id = ?");
+    $stmt->bind_param("s", $member_id);
+    $stmt->execute();
+
+    $_SESSION['message'] = "Record has been deleted!";
+    $_SESSION['msg_type'] = "danger";
+    $stmt->close();
+
+    header("Location: members.php");
+    exit();
+}
+
+// Retrieve data 
+$result = $conn->query("SELECT * FROM member");
+
+// action is triggered
+if (isset($_GET['edit_member_id'])) {
+    $u_id = $_GET['edit_member_id'];
+    $update = true;
+
+    // Retrieve other details
+    $first_name = $_GET['first_name'];
+    $last_name = $_GET['last_name'];
+    $birthday = $_GET['birthday'];
+    $email = $_GET['email'];
+
+}
+
+// is the update action is triggered
+if (isset($_POST['update'])) {
+    $member_id = $_POST['member_id'];
+    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
+    $birthday = $_POST['birthday'];
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+    // avoid SQL injection
+    $stmt = $conn->prepare("UPDATE member SET first_name=?, last_name=?, birthday=?, email=? WHERE member_id = ?");
+    $stmt->bind_param("sssss", $first_name, $last_name, $birthday, $email, $member_id);
+    $stmt->execute();
+
+    $_SESSION['message'] = "Record has been updated!";
+    $_SESSION['msg_type'] = "warning";
+
+    $stmt->close();
+    header("Location: members.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
