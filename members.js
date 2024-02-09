@@ -32,7 +32,7 @@
             var encodedBirthday = encodeURIComponent(birthday);
             var encodedEmail = encodeURIComponent(email);
 
-            window.location.href = '1.php?edit_member_id=' + encodeURIComponent(member_id) +
+            window.location.href = 'members.php?edit_member_id=' + encodeURIComponent(member_id) +
                 '&first_name=' + encodedFirstName +
                 '&last_name=' + encodedLastName +
                 '&birthday=' + encodedBirthday +
@@ -44,7 +44,7 @@
             var confirmDelete = confirm('Are you sure you want to delete this member?');
 
             if (confirmDelete) {
-                window.location.href = '1.php?delete_member_id=' + member_id;
+                window.location.href = 'members.php?delete_member_id=' + member_id;
             }
         }
        

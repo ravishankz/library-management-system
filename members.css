@@ -80,3 +80,22 @@ th {
     border-radius: 10px;
     text-align: center;
 }
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit{
+    background-color: #00844f;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
+.delete {
+    background-color: #9a0000;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
