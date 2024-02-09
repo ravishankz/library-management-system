@@ -29,8 +29,8 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Form</title>
 
-  <<link rel="stylesheet" href="2.css">
-  <script src="3.js"></script>
+  <<link rel="stylesheet" href="members.css">
+  <script src="members.js"></script>
 
 
 </head>
