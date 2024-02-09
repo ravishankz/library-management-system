@@ -29,7 +29,7 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Form</title>
 
-  <<link rel="stylesheet" href="members.css">
+  <link rel="stylesheet" href="members.css">
   <script src="members.js"></script>
 
 
@@ -71,5 +71,22 @@ if ($conn->connect_error) {
     </div>
 
     <br>
+    <div class="container-table">
+        <h2>Member List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Member ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Birthday</th>
+                    <th>Email Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+</tbody>
+</table>
+
 </body>
 </html>
