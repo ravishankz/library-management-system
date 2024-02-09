@@ -39,7 +39,7 @@ if ($conn->connect_error) {
 
     <div class="container">
         <h2 style="text-align: center;">Member Registration</h2>
-        <form action="1.php" method="post" onsubmit="return validateEmail() && validateMemberID()">
+        <form action="members.php" method="post" onsubmit="return validateEmail() && validateMemberID()">
             <label for="member_id">Member ID:</label>
             <input type="text" id="member_id" name="member_id" pattern="M[0-9]{3}"
                 title="Enter a valid Member ID (e.g., M001)" required
@@ -85,8 +85,7 @@ if ($conn->connect_error) {
                 </tr>
             </thead>
             <tbody>
-</tbody>
-</table>
+
 
 </body>
 </html>

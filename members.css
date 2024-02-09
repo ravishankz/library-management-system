@@ -70,3 +70,13 @@ th {
    
     color: #fff;
 }
+
+.container-table {
+    max-inline-size: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 10px;
+    text-align: center;
+}
