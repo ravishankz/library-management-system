@@ -59,7 +59,7 @@
     <div class="button-container">
         <button class="btn btn-primary" onclick="window.location.href = 'indexLog.php';">Login and User Registration</button>
         <button class="btn btn-primary" onclick="window.location.href = 'bookreg.php';">Books Registration</button>
-        <button class="btn btn-primary" onclick="window.location.href = 'feature3.php.php';">Book Category Registration</button>
+        <button class="btn btn-primary" onclick="window.location.href = 'feature3.php';">Book Category Registration</button>
         <button class="btn btn-primary" onclick="window.location.href = 'members.php';">Library Member Registration</button>
         <button class="btn btn-primary" onclick="window.location.href = 'feature_6.php';">Assign Fine for a User</button>
     </div>
