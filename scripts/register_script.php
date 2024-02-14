@@ -3,7 +3,7 @@
 session_start();
 
 // Include database connection
-include('../config.php');
+include('../configLog.php');
 
 // Function to sanitize input data
 function sanitizeData($data) {

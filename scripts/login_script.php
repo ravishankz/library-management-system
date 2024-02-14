@@ -3,7 +3,7 @@
 session_start();
 
 // Include database connection
-include('../config.php');
+include('../configLog.php');
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -27,18 +27,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Password is incorrect
             $_SESSION['error'] = "Invalid username or password.";
-            header("Location: ../pages/login.php");
+            header("Location: ../pages/loginLog.php");
             exit();
         }
     } else {
         // User not found
         $_SESSION['error'] = "Invalid username or password.";
-        header("Location: ../pages/login.php");
+        header("Location: ../pages/loginLog.php");
         exit();
     }
 } else {
     // Redirect to login page if form is not submitted
-    header("Location: ../pages/login.php");
+    header("Location: ../pages/loginLog.php");
     exit();
 }
 ?>

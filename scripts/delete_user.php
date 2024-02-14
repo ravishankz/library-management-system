@@ -2,7 +2,7 @@
 
 session_start();
 
-include('../config.php');
+include('../configLog.php');
 
 if (isset($_GET['user_id'])) {
     $userId = htmlspecialchars(stripslashes(trim($_GET['user_id'])));
