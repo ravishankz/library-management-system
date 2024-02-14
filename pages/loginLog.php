@@ -31,7 +31,7 @@
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
         <p class="mt-3">Don't have an account? <a href="register.php">Register here</a>.</p> <!-- Registration link -->
-        <p class="mt-3"><a href="../index.php">Homepage</a></p>
+        <p class="mt-3"><a href="../indexLog.php">Homepage</a></p>
     </div>
 
     <?php include('../includes/footer.php'); ?>

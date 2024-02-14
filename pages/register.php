@@ -40,8 +40,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
-        <p class="mt-3">Already have an account? <a href="login.php">Login here</a>.</p> <!-- Login link -->
-        <p class="mt-3"><a href="../index.php">Homepage</a></p>
+        <p class="mt-3">Already have an account? <a href="loginLog.php">Login here</a>.</p> <!-- Login link -->
+        <p class="mt-3"><a href="../indexLog.php">Homepage</a></p>
     </div>
 
     <?php include('../includes/footer.php'); ?>

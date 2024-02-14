@@ -2,13 +2,13 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: loginLog.php");
     exit();
 }
 
 include('../includes/header.php');
 
-include('../config.php');
+include('../configLog.php');
 ?>
 
 <!DOCTYPE html>
