@@ -81,4 +81,94 @@ if (isset($_POST['update'])){
     echo '<script>window.location="bookreg.php"</script>';
 }
 
+
+
+
+//delete
+if (isset($_GET['delete'])){
+
+    $id = $_GET['delete'];
+
+    $sql = "DELETE FROM book WHERE book_id='$id'";
+
+    echo("<script>confirm('Are you sure ?');</script>");
+
+    $conn->query($sql);
+
+    echo '<script>window.location="bookreg.php"</script>'; 
+
+    
+}
+
+// Function to update book details
+function updateBook($book_id, $newBookName, $newBookCategory) {
+    require("Configuration.php");
+
+    
+    $stmt = $conn->prepare("UPDATE book SET book_name = ?, category_id = ? WHERE book_id = ?");
+    $stmt->bind_param("sss", $newBookName, $newBookCategory, $book_id);
+
+    
+    if ($stmt->execute()) {
+        echo "Book details updated successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    header("Location: bookreg.php");
+    $stmt->close();
+    $conn->close();
+}
+
+
+// Function to delete a book record
+function deleteBook($book_id) {
+    require("Configuration.php");
+
+    
+    $stmt = $conn->prepare("DELETE FROM book WHERE book_id = ?");
+    $stmt->bind_param("s", $book_id);
+
+    
+    if ($stmt->execute()) {
+        echo "Book deleted successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    
+    $stmt->close();
+    $conn->close();
+}
+
+
+
+// Check if form is submitted for registration
+if (isset($_POST['register'])) {
+    $book_id = $_POST['bookID'];
+    $bookName = $_POST['bookName'];
+    $bookCategory = $_POST['bookCategory'];
+    registerBook($book_id, $bookName, $bookCategory);
+    header("Location:bookreg.php");
+}
+
+
+// Check if action is delete and id is provided
+if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($_GET['id'])) {
+
+    $book_id = $_GET['id'];
+    
+
+    deleteBook($book_id);
+
+    echo("Book Deleted");
+    
+
+    header("Location: bookreg.php");
+    exit;
+}
+
+
+
+
 ?>
