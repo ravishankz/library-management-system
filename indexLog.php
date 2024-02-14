@@ -6,7 +6,7 @@
             <h1 class="display-4 text-center">Welcome to the Library Management System</h1>
             <p class="lead text-center">Manage your library resources efficiently.</p>
             <hr class="my-4">
-            <p class="text-center">Please <a href="pages/login.php">Login</a> or <a href="pages/register.php">Register</a> to access the system.</p>
+            <p class="text-center">Please <a href="pages/loginLog.php">Login</a> or <a href="pages/register.php">Register</a> to access the system.</p>
         </div>
     </div>
 </body>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../config.php');
+include('../configLog.php');
 
 if (!isset($_SESSION['username'])) {
     header("Location: loginLog.php");
