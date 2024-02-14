@@ -1,5 +1,5 @@
 <?php
-require_once('library.php');
+require_once('bookregprocess.php');
 require_once('configuration.php');
 ?>
 
@@ -22,7 +22,7 @@ require_once('configuration.php');
 </nav>
     
    
-    <form action="library.php" method="post">
+    <form action="bookregprocess.php" method="post">
         <label for="bookID">Book ID:</label>
         <input type="text" id="bookID" name="bookID" value='<?php echo $id ?>' required pattern="B\d{3}" title="Please enter Book ID in the format B001." ><br><br>
         <label for="bookName">Book Name:</label>
@@ -42,9 +42,10 @@ require_once('configuration.php');
         <?php endif; ?>
     </form>
 
-    <h2>Display All Books</h2>
+    
 
     <table>
+        <caption><h2>Display All Books</h2></caption>
         <thead>
             <tr>
                 <th>Book ID</th>
@@ -67,9 +68,9 @@ require_once('configuration.php');
                             <td> <?php echo $row['book_name'] ?> </td>
                             <td> <?php echo $row['category_id'] ?> </td>
 
-                            <td> <a href="book.php?edit=<?php echo $row['book_id'] ?>"><button class="b1">Edit</button></a>
+                            <td> <a href="bookreg.php?edit=<?php echo $row['book_id'] ?>"><button class="b1">Edit</button></a>
 
-                            <a href="book.php?delete=<?php echo $row['book_id'] ?>"><button class="b2">Delete</button></a>
+                            <a href="bookreg.php?delete=<?php echo $row['book_id'] ?>"><button class="b2">Delete</button></a>
                         </tr>
                     <?php }
                 }else{
